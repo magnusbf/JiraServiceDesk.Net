@@ -8,7 +8,7 @@ namespace JiraServiceDesk.Net.Tests
         [Fact]
         public async Task GetServiceDeskInfoAsync()
         {
-            var result = await _client.GetServiceDeskInfoAsync().ConfigureAwait(false);
+            var result = await _client.GetServiceDeskInfoAsync();
             Assert.NotNull(result);
         }
     }

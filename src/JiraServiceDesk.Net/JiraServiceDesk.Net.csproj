@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.3;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;net481</TargetFrameworks>
     <Version>0.0.1</Version>
     <Authors>Luk Vermeulen</Authors>
     <Company>Luk Vermeulen</Company>
@@ -15,7 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Flurl.Http" Version="2.3.2" />
+    <PackageReference Include="Flurl.Http" Version="4.0.2" />
+    <PackageReference Include="Flurl.Http.Newtonsoft" Version="0.9.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

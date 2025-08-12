@@ -9,7 +9,7 @@ namespace JiraServiceDesk.Net.Tests
         [Fact]
         public async Task GetOrganizationsAsync()
         {
-            var results = await _client.GetOrganizationsAsync(maxPages: 2, limit: 3).ConfigureAwait(false);
+            var results = await _client.GetOrganizationsAsync(maxPages: 2, limit: 3);
             Assert.NotEmpty(results);
         }
 
@@ -18,10 +18,10 @@ namespace JiraServiceDesk.Net.Tests
         {
             string name = nameof(CreateAndDeleteOrganizationAsync) + DateTime.UtcNow;
 
-            var result = await _client.CreateOrganizationAsync(name).ConfigureAwait(false);
+            var result = await _client.CreateOrganizationAsync(name);
             Assert.NotNull(result);
 
-            bool success = await _client.DeleteOrganizationAsync(result.Id).ConfigureAwait(false);
+            bool success = await _client.DeleteOrganizationAsync(result.Id);
             Assert.True(success);
         }
 
@@ -29,7 +29,7 @@ namespace JiraServiceDesk.Net.Tests
         [InlineData("1")]
         public async Task GetOrganizationAsync(string id)
         {
-            var result = await _client.GetOrganizationAsync(id).ConfigureAwait(false);
+            var result = await _client.GetOrganizationAsync(id);
             Assert.NotNull(result);
         }
 
@@ -37,7 +37,7 @@ namespace JiraServiceDesk.Net.Tests
         [InlineData("1")]
         public async Task GetUsersInOrganizationAsync(string id)
         {
-            var results = await _client.GetUsersInOrganizationAsync(id).ConfigureAwait(false);
+            var results = await _client.GetUsersInOrganizationAsync(id);
             Assert.NotEmpty(results);
         }
     }

@@ -6,19 +6,19 @@ namespace JiraServiceDesk.Net.Tests
     public partial class JiraServiceDeskClientShould
     {
         [Theory]
-        [InlineData("EPSHELP")]
+        [InlineData("CSM")]
         public async Task GetQueueSettingsAsync(string projectKey)
         {
-            var result = await _client.GetQueueSettingsAsync(projectKey).ConfigureAwait(false);
+            var result = await _client.GetQueueSettingsAsync(projectKey);
             Assert.NotNull(result);
         }
 
         [Theory]
-        [InlineData("EPSHELP")]
+        [InlineData("CSM")]
         public async Task UseCachedQueueCount(string projectKey)
         {
             await _client.UseCachedQueueCountAsync(true, projectKey);
-            var settings = await _client.GetQueueSettingsAsync(projectKey).ConfigureAwait(false);
+            var settings = await _client.GetQueueSettingsAsync(projectKey);
             Assert.True(settings.QueueCount.UseCachedQueueCount);
         }
     }
